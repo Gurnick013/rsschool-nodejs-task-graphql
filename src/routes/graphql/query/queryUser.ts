@@ -2,7 +2,7 @@ import { GraphQLList, GraphQLNonNull, GraphQLObjectType } from 'graphql';
 import { UUIDType } from '../types/uuid.js';
 import { UserType } from "../types/usersType";
 import { Context } from "../types/contextType";
-import { User } from "../types/userType";
+import { User } from '@prisma/client';
 
 export const UserQueries = {
   user: {

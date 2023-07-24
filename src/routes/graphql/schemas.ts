@@ -1,10 +1,7 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { UUIDType } from "./types/uuid";
-import { GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLSchema } from "graphql";
-import { User } from "./types/userType";
-import { Context } from "./types/contextType";
-import { UserType } from "./types/usersType";
+import { GraphQLObjectType, GraphQLSchema } from "graphql";
 import { UserQueries } from "./query/queryUser";
+import { UserMutations } from "./mutations/userMutations";
 
 export const gqlResponseSchema = Type.Partial(
   Type.Object({
@@ -32,4 +29,11 @@ export const query = new GraphQLObjectType({
   }),
 });
 
-export const graphQLSchema = new GraphQLSchema({ query });
+export const mutation = new GraphQLObjectType({
+  name: 'Mutation',
+  fields: () => ({
+    ...UserMutations,
+  }),
+});
+
+export const graphQLSchema = new GraphQLSchema({ query, mutation });
