@@ -7,9 +7,9 @@ import {
   GraphQLNonNull,
 } from 'graphql';
 import { MemberType as PrismaMemberType } from '@prisma/client';
-import { Context } from "./contextType";
 import { MemberTypeId } from '../../member-types/schemas.js';
 import { ProfileType } from "./profileType";
+import { Context } from "./contextType";
 
 export const MemberTypeIdEnum = new GraphQLEnumType({
   name: 'MemberTypeId',
@@ -29,7 +29,7 @@ export const MemberType = new GraphQLObjectType({
     profiles: {
       type: new GraphQLList(ProfileType),
       resolve: async ({ id }: PrismaMemberType, __: unknown, { prisma }: Context) =>
-          await prisma.profile.findMany({ where: { memberTypeId: id } }),
+        await prisma.profile.findMany({ where: { memberTypeId: id } }),
     },
   }),
 });

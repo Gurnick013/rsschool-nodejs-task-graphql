@@ -1,7 +1,7 @@
 import { GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql';
 import { Post } from '@prisma/client';
 import { UUIDType } from "./uuid";
-import { UserType } from "./usersType";
+import { UserType } from "./userType";
 import { Context } from "./contextType";
 
 export const PostType = new GraphQLObjectType({
@@ -14,8 +14,8 @@ export const PostType = new GraphQLObjectType({
     authorId: { type: new GraphQLNonNull(UUIDType) },
     author: {
       type: UserType as GraphQLObjectType,
-      resolve: async ({ authorId }: Post, __: unknown, { prisma }: Context) => await prisma.post
-          .findUnique({ where: { id: authorId } }),
+      resolve: async ({ authorId }: Post, __: unknown, { prisma }: Context) =>
+        await prisma.user.findUnique({ where: { id: authorId } }),
     },
   }),
 });

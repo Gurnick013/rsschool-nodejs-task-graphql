@@ -1,13 +1,9 @@
 import { Profile } from '@prisma/client';
 import { UUIDType } from '../types/uuid.js';
 import { GraphQLNonNull, GraphQLObjectType } from 'graphql';
-import {
-  ChangeProfileInput,
-  ChangeProfileInputType,
-  CreateProfileInput,
-  CreateProfileInputType
-} from "../inputsType/inputProfile";
 import { ProfileType } from "../types/profileType";
+import { ChangeProfileInput, CreateProfileInput } from "../inputsType/inputProfile";
+import { ChangeProfileInputType, CreateProfileInputType } from "../types/inputs.interface";
 import { Context } from "../types/contextType";
 
 export const ProfileMutations = {
@@ -15,14 +11,13 @@ export const ProfileMutations = {
     type: ProfileType as GraphQLObjectType,
     args: { dto: { type: new GraphQLNonNull(CreateProfileInput) } },
     resolve: async (__: unknown, { dto }: CreateProfileInputType, { prisma }: Context) =>
-        await prisma.profile.create({ data: dto }),
+      await prisma.profile.create({ data: dto }),
   },
-
   changeProfile: {
     type: ProfileType as GraphQLObjectType,
     args: {
       id: { type: new GraphQLNonNull(UUIDType) },
-      dto: { type: new GraphQLNonNull(ChangeProfileInput) },
+      dto: { type: ChangeProfileInput },
     },
     resolve: async (
         __: unknown,
@@ -30,7 +25,6 @@ export const ProfileMutations = {
         { prisma }: Context,
     ) => await prisma.profile.update({ where: { id }, data: dto }),
   },
-
   deleteProfile: {
     type: UUIDType,
     args: { id: { type: new GraphQLNonNull(UUIDType) } },

@@ -18,19 +18,3 @@ export const ChangePostInput = new GraphQLInputObjectType({
     title: { type: GraphQLString },
   }),
 });
-
-export interface CreatePostInputType {
-  dto: {
-    title: string;
-    content: string;
-    authorId: string;
-  };
-}
-
-export interface ChangePostInputType {
-  id: string;
-  dto: {
-    title: string;
-    content: string;
-  };
-}

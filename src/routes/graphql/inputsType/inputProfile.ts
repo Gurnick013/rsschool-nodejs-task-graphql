@@ -20,21 +20,3 @@ export const ChangeProfileInput = new GraphQLInputObjectType({
     memberTypeId: { type: MemberTypeIdEnum },
   }),
 });
-
-export interface CreateProfileInputType {
-  dto: {
-    isMale: boolean;
-    yearOfBirth: number;
-    memberTypeId: string;
-    userId: string;
-  };
-}
-
-export interface ChangeProfileInputType {
-  id: string;
-  dto: {
-    isMale: boolean;
-    yearOfBirth: number;
-    memberTypeId: string;
-  };
-}

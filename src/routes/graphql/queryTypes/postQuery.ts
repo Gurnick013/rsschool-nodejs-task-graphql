@@ -1,12 +1,12 @@
-import { GraphQLList, GraphQLNonNull, GraphQLObjectType } from 'graphql';
-import { UUIDType } from '../types/uuid.js';
+import { GraphQLList, GraphQLNonNull } from 'graphql';
 import { Post } from '@prisma/client';
-import { Context } from "../types/contextType";
 import { PostType } from "../types/postType";
+import { UUIDType } from "../types/uuid";
+import { Context } from "../types/contextType";
 
 export const PostQueries = {
   post: {
-    type: PostType as GraphQLObjectType,
+    type: PostType,
     args: {
       id: { type: new GraphQLNonNull(UUIDType) },
     },
