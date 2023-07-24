@@ -1,6 +1,6 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { GraphQLObjectType, GraphQLSchema } from "graphql";
-import { ProfileQueries } from "./queryTypes/profileQUery.js";
+import { ProfileQueries } from "./queryTypes/profileQuery.js";
 import { PostQueries } from "./queryTypes/postQuery.js";
 import { MemberTypeQueries } from "./queryTypes/memberTypeQuery.js";
 import { UserMutations } from "./mutations/userMutations.js";
