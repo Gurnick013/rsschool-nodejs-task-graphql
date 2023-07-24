@@ -1,10 +1,10 @@
 import { User } from '@prisma/client';
 import { UUIDType } from '../types/uuid.js';
 import { GraphQLNonNull, GraphQLObjectType, GraphQLScalarType } from 'graphql';
-import { UserType } from "../types/userType";
-import { ChangeUserInput, CreateUserInput } from "../inputsType/inputUser";
-import { ChangeUserInputType, CreateUserInputType } from "../types/inputs.interface";
-import { Context } from "../types/contextType";
+import { UserType } from "../types/userType.js";
+import { ChangeUserInput, CreateUserInput } from "../inputsType/inputUser.js";
+import { ChangeUserInputType, CreateUserInputType } from "../types/inputs.interface.js";
+import { Context } from "../types/contextType.js";
 
 export const UserMutations = {
   createUser: {

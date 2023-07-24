@@ -10,9 +10,9 @@ import {
   parseResolveInfo,
   simplifyParsedResolveInfoFragmentWithType,
 } from 'graphql-parse-resolve-info';
-import { UserType } from "../types/userType";
-import { UUIDType } from "../types/uuid";
-import { Context } from "../types/contextType";
+import { UserType } from "../types/userType.js";
+import { UUIDType } from "../types/uuid.js";
+import { Context } from "../types/contextType.js";
 
 export const UserQueries = {
   user: {

@@ -8,8 +8,8 @@ import {
 } from 'graphql';
 import { MemberType as PrismaMemberType } from '@prisma/client';
 import { MemberTypeId } from '../../member-types/schemas.js';
-import { ProfileType } from "./profileType";
-import { Context } from "./contextType";
+import { ProfileType } from "./profileType.js";
+import { Context } from "./contextType.js";
 
 export const MemberTypeIdEnum = new GraphQLEnumType({
   name: 'MemberTypeId',

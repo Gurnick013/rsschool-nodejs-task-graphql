@@ -1,8 +1,8 @@
 import { GraphQLList, GraphQLNonNull, GraphQLObjectType } from 'graphql';
 import { Profile } from '@prisma/client';
-import { ProfileType } from "../types/profileType";
-import { UUIDType } from "../types/uuid";
-import { Context } from "../types/contextType";
+import { ProfileType } from "../types/profileType.js";
+import { UUIDType } from "../types/uuid.js";
+import { Context } from "../types/contextType.js";
 
 export const ProfileQueries = {
   profile: {

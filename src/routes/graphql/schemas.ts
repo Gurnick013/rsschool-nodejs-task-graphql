@@ -1,12 +1,12 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { GraphQLObjectType, GraphQLSchema } from "graphql";
-import { UserQueries } from "./queryTypes/queryUser";
-import { ProfileQueries } from "./queryTypes/profileQUery";
-import { PostQueries } from "./queryTypes/postQuery";
-import { MemberTypeQueries } from "./queryTypes/memberTypeQuery";
-import { UserMutations } from "./mutations/userMutations";
-import { ProfileMutations } from "./mutations/profileMutations";
-import { PostMutations } from "./mutations/postMutations";
+import { ProfileQueries } from "./queryTypes/profileQUery.js";
+import { PostQueries } from "./queryTypes/postQuery.js";
+import { MemberTypeQueries } from "./queryTypes/memberTypeQuery.js";
+import { UserMutations } from "./mutations/userMutations.js";
+import { ProfileMutations } from "./mutations/profileMutations.js";
+import { PostMutations } from "./mutations/postMutations.js";
+import { UserQueries } from "./queryTypes/userQuery.js";
 
 export const gqlResponseSchema = Type.Partial(
   Type.Object({

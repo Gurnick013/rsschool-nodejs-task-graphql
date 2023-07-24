@@ -1,6 +1,6 @@
 import { MemberType, Post, PrismaClient, Profile, User } from '@prisma/client';
 import DataLoader from 'dataloader';
-import { DataLoaders } from "../types/loaderType";
+import { DataLoaders } from "../types/loaderType.js";
 
 export const initializeDataLoaders = (prisma: PrismaClient): DataLoaders => {
 
@@ -30,21 +30,15 @@ export const initializeDataLoaders = (prisma: PrismaClient): DataLoaders => {
       const posts = await prisma.post.findMany({
         where: { authorId: { in: [...keys] } },
       });
-
       const postsByAuthorIdMap = new Map<string, Post[]>();
-
       for (const post of posts) {
         const authorId = post.authorId;
         const authorPosts = postsByAuthorIdMap.get(authorId) ?? [];
-
         authorPosts.push(post);
-
         postsByAuthorIdMap.set(authorId, authorPosts);
       }
-
       return keys.map((key) => postsByAuthorIdMap.get(key));
     });
-
     return postDataLoader;
   };
 
@@ -56,13 +50,11 @@ export const initializeDataLoaders = (prisma: PrismaClient): DataLoaders => {
       const profiles = await prisma.profile.findMany({
         where: { userId: { in: [...keys] } },
       });
-
       const profilesMap = new Map<string, Profile>();
       profiles.forEach((profile) => profilesMap.set(profile.userId, profile));
 
       return keys.map((id) => profilesMap.get(id));
     });
-
     return profileDataLoader;
   };
 
@@ -75,16 +67,12 @@ export const initializeDataLoaders = (prisma: PrismaClient): DataLoaders => {
         where: { id: { in: [...keys] } },
         include: { userSubscribedTo: true, subscribedToUser: true },
       });
-
       const usersMap = new Map<string, User>();
-
       users.forEach((user) => {
         usersMap.set(user.id, user);
       });
-
       return keys.map((key) => usersMap.get(key));
     });
-
     return userDataLoader;
   };
 

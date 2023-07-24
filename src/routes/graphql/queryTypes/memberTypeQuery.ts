@@ -1,7 +1,7 @@
 import { GraphQLList, GraphQLNonNull, GraphQLObjectType } from 'graphql';
 import { MemberType as PrismaMemberType } from '@prisma/client';
-import { MemberType, MemberTypeIdEnum } from "../types/memberType";
-import { Context } from "../types/contextType";
+import { MemberType, MemberTypeIdEnum } from "../types/memberType.js";
+import { Context } from "../types/contextType.js";
 
 export const MemberTypeQueries = {
   memberType: {

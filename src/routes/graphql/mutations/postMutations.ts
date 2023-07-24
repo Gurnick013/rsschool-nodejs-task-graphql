@@ -1,10 +1,10 @@
 import { Post } from '@prisma/client';
 import { GraphQLNonNull, GraphQLObjectType, GraphQLScalarType } from 'graphql';
-import { PostType } from "../types/postType";
-import { ChangePostInput, CreatePostInput } from "../inputsType/inputPost";
-import { ChangePostInputType, CreatePostInputType } from "../types/inputs.interface";
-import { Context } from "../types/contextType";
-import { UUIDType } from "../types/uuid";
+import { PostType } from "../types/postType.js";
+import { ChangePostInput, CreatePostInput } from "../inputsType/inputPost.js";
+import { Context } from "../types/contextType.js";
+import { UUIDType } from "../types/uuid.js";
+import { ChangePostInputType, CreatePostInputType } from "../types/inputs.interface.js";
 
 export const PostMutations = {
   createPost: {

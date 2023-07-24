@@ -1,10 +1,10 @@
 import { Profile } from '@prisma/client';
 import { UUIDType } from '../types/uuid.js';
 import { GraphQLNonNull, GraphQLObjectType } from 'graphql';
-import { ProfileType } from "../types/profileType";
-import { ChangeProfileInput, CreateProfileInput } from "../inputsType/inputProfile";
-import { ChangeProfileInputType, CreateProfileInputType } from "../types/inputs.interface";
-import { Context } from "../types/contextType";
+import { ProfileType } from "../types/profileType.js";
+import { ChangeProfileInput, CreateProfileInput } from "../inputsType/inputProfile.js";
+import { ChangeProfileInputType, CreateProfileInputType } from "../types/inputs.interface.js";
+import { Context } from "../types/contextType.js";
 
 export const ProfileMutations = {
   createProfile: {
