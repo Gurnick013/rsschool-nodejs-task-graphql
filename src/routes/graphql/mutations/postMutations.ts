@@ -10,13 +10,13 @@ export const PostMutations = {
     type: PostType,
     args: { dto: { type: new GraphQLNonNull(CreatePostInput) } },
     resolve: async (__: unknown, { dto }: CreatePostInputType, { prisma }: Context) =>
-        await prisma.post.create({ data: dto }),
+      await prisma.post.create({ data: dto }),
   },
   changePost: {
     type: PostType,
     args: { id: { type: new GraphQLNonNull(UUIDType) }, dto: { type: ChangePostInput } },
     resolve: async (__: unknown, { id, dto }: ChangePostInputType, { prisma }: Context) =>
-        await prisma.post.update({ where: { id }, data: dto }),
+      await prisma.post.update({ where: { id }, data: dto }),
   },
   deletePost: {
     type: UUIDType,

@@ -1,5 +1,5 @@
 import { GraphQLBoolean, GraphQLInt, GraphQLNonNull, GraphQLObjectType } from 'graphql';
-import { UUIDType } from '../types/uuid.js';
+import { UUIDType } from './uuid';
 import { MemberTypeIdEnum } from "./memberType";
 import { UserType } from "./usersType";
 import { Context } from "./contextType";

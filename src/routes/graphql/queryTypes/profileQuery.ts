@@ -2,6 +2,7 @@ import { GraphQLList, GraphQLNonNull } from 'graphql';
 import { UUIDType } from '../types/uuid.js';
 import { Profile } from '@prisma/client';
 import { Context } from "../types/contextType";
+import { ProfileType } from "../types/profileType";
 
 export const ProfileQueries = {
   profile: {

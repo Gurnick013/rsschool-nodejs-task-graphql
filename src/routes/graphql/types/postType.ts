@@ -13,7 +13,7 @@ export const PostType = new GraphQLObjectType({
     content: { type: new GraphQLNonNull(GraphQLString) },
     authorId: { type: new GraphQLNonNull(UUIDType) },
     author: {
-      type: UserType,
+      type: UserType as GraphQLObjectType,
       resolve: async ({ authorId }: Post, __: unknown, { prisma }: Context) => await prisma.post
           .findUnique({ where: { id: authorId } }),
     },
