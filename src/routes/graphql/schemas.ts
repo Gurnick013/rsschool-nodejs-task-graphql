@@ -1,6 +1,6 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { GraphQLObjectType, GraphQLSchema } from "graphql";
-import { UserQueries } from "./query/queryUser";
+import { UserQueries } from "./querys/queryUser";
 import { UserMutations } from "./mutations/userMutations";
 
 export const gqlResponseSchema = Type.Partial(
